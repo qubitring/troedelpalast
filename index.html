@@ -28,6 +28,10 @@
         box-sizing: border-box;
       }
 
+      [hidden] {
+        display: none !important;
+      }
+
       html {
         scroll-behavior: smooth;
       }
@@ -130,6 +134,37 @@
       .main-nav .nav-cta:hover {
         background: var(--ink);
         color: var(--paper);
+      }
+
+      .language-switcher {
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        padding: 3px;
+        border: 1px solid var(--line);
+        border-radius: 2px;
+      }
+
+      .language-button {
+        min-width: 35px;
+        padding: 7px 6px;
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        font: inherit;
+        font-size: .73rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .language-button[aria-pressed="true"] {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .language-button:focus-visible {
+        outline: 2px solid var(--rust);
+        outline-offset: 2px;
       }
 
       .hero {
@@ -784,104 +819,272 @@
     </style>
   </head>
   <body>
-    <div class="announcement">Gebraucht. Geliebt. Wiederentdeckt.</div>
+    <div class="announcement">
+      <span data-language-content="de">Gebraucht. Geliebt. Wiederentdeckt.</span>
+      <span data-language-content="cs" lang="cs" hidden>Použité. Milované. Znovuobjevené.</span>
+    </div>
     <header class="site-header">
-      <a class="brand" href="#" aria-label="Trödelpalast – zur Startseite">
+      <a class="brand" href="#" aria-label="Trödelpalast – zur Startseite" data-de-label="Trödelpalast – zur Startseite" data-cs-label="Trödelpalast – domů">
         <span class="brand-mark" aria-hidden="true">T</span>
         <span class="brand-name">Trödel<span>palast</span></span>
       </a>
-      <nav class="main-nav" aria-label="Hauptnavigation">
-        <a href="#idee">Unsere Idee</a>
-        <a href="#besuch">Besuch planen</a>
-        <a class="nav-cta" href="https://www.facebook.com/profile.php?id=61582380937136" target="_blank" rel="noopener noreferrer">Auf Facebook <span aria-hidden="true">↗</span></a>
+      <nav class="main-nav" aria-label="Hauptnavigation" data-de-label="Hauptnavigation" data-cs-label="Hlavní navigace">
+        <a href="#idee">
+          <span data-language-content="de">Unsere Idee</span>
+          <span data-language-content="cs" lang="cs" hidden>Náš příběh</span>
+        </a>
+        <a href="#besuch">
+          <span data-language-content="de">Besuch planen</span>
+          <span data-language-content="cs" lang="cs" hidden>Naplánovat návštěvu</span>
+        </a>
+        <a class="nav-cta" href="https://www.facebook.com/profile.php?id=61582380937136" target="_blank" rel="noopener noreferrer">
+          <span data-language-content="de">Auf Facebook</span>
+          <span data-language-content="cs" lang="cs" hidden>Na Facebooku</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <div class="language-switcher" role="group" aria-label="Sprache auswählen" data-de-label="Sprache auswählen" data-cs-label="Vyberte jazyk">
+          <button class="language-button" type="button" data-language="de" aria-label="Auf Deutsch anzeigen" aria-pressed="true">DE</button>
+          <button class="language-button" type="button" data-language="cs" aria-label="Zobrazit česky" aria-pressed="false">CS</button>
+        </div>
       </nav>
     </header>
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-text">
-          <p class="eyebrow">Willkommen im Trödelpalast</p>
-          <h1 id="hero-title">Schönes mit <em>Geschichte.</em></h1>
-          <p class="hero-copy">Manche Dinge sind einfach zu schön, um in Vergessenheit zu geraten. Hier beginnt ihr nächstes Kapitel – und vielleicht auch eine neue Lieblingsgeschichte.</p>
+          <p class="eyebrow">
+            <span data-language-content="de">Willkommen im Trödelpalast</span>
+            <span data-language-content="cs" lang="cs" hidden>Vítejte v Trödelpalastu</span>
+          </p>
+          <h1 id="hero-title">
+            <span data-language-content="de">Schönes mit <em>Geschichte.</em></span>
+            <span data-language-content="cs" lang="cs" hidden><em>Krása s příběhem.</em></span>
+          </h1>
+          <p class="hero-copy">
+            <span data-language-content="de">Manche Dinge sind einfach zu schön, um in Vergessenheit zu geraten. Hier beginnt ihr nächstes Kapitel – und vielleicht auch eine neue Lieblingsgeschichte.</span>
+            <span data-language-content="cs" lang="cs" hidden>Některé věci jsou příliš krásné na to, aby upadly v zapomnění. Tady začíná jejich další kapitola – a možná i váš nový oblíbený příběh.</span>
+          </p>
           <div class="button-row">
-            <a class="button" href="#idee">Tritt ein <span class="arrow" aria-hidden="true">↓</span></a>
-            <a class="button button-secondary" href="https://www.facebook.com/profile.php?id=61582380937136" target="_blank" rel="noopener noreferrer">Aktuelles entdecken <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="button" href="#idee">
+              <span data-language-content="de">Tritt ein</span>
+              <span data-language-content="cs" lang="cs" hidden>Vstupte dál</span>
+              <span class="arrow" aria-hidden="true">↓</span>
+            </a>
+            <a class="button button-secondary" href="https://www.facebook.com/profile.php?id=61582380937136" target="_blank" rel="noopener noreferrer">
+              <span data-language-content="de">Aktuelles entdecken</span>
+              <span data-language-content="cs" lang="cs" hidden>Novinky</span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
 
-        <div class="hero-art" aria-label="Gemütlicher Wohnraum mit ausgewählten Einrichtungsstücken">
+        <div class="hero-art" aria-label="Gemütlicher Wohnraum mit ausgewählten Einrichtungsstücken" data-de-label="Gemütlicher Wohnraum mit ausgewählten Einrichtungsstücken" data-cs-label="Útulný obývací pokoj s vybraným nábytkem">
           <div class="hero-photo">
-            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Warmer, liebevoll eingerichteter Wohnraum mit gemütlichen Möbeln" fetchpriority="high">
-            <span class="photo-caption">Ein Fundstück wartet schon.</span>
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Warmer, liebevoll eingerichteter Wohnraum mit gemütlichen Möbeln" data-de-alt="Warmer, liebevoll eingerichteter Wohnraum mit gemütlichen Möbeln" data-cs-alt="Světlý a útulný obývací pokoj s nábytkem" fetchpriority="high">
+            <span class="photo-caption">
+              <span data-language-content="de">Ein Fundstück wartet schon.</span>
+              <span data-language-content="cs" lang="cs" hidden>Čeká tu nález, který si zamilujete.</span>
+            </span>
           </div>
           <div class="sun-stamp" aria-hidden="true">
-            <span>Lieblingsteile</span>
-            <strong>für immer</strong>
-            <span>weitergeben</span>
+            <span>
+              <span data-language-content="de">Lieblingsteile</span>
+              <span data-language-content="cs" lang="cs" hidden>Oblíbené kousky</span>
+            </span>
+            <strong>
+              <span data-language-content="de">für immer</span>
+              <span data-language-content="cs" lang="cs" hidden>pro další</span>
+            </strong>
+            <span>
+              <span data-language-content="de">weitergeben</span>
+              <span data-language-content="cs" lang="cs" hidden>generace</span>
+            </span>
           </div>
           <span class="art-spark" aria-hidden="true">✳</span>
         </div>
       </section>
 
-      <div class="ticker" aria-label="Stöbern, staunen, wiederlieben">
+      <div class="ticker" aria-label="Stöbern, staunen, wiederlieben" data-de-label="Stöbern, staunen, wiederlieben" data-cs-label="Prohlížet, objevovat, znovu milovat">
         <div class="ticker-track" aria-hidden="true">
-          <span>Stöbern</span><b>✳</b><span>Staunen</span><b>✳</b><span>Wiederlieben</span><b>✳</b>
-          <span>Stöbern</span><b>✳</b><span>Staunen</span><b>✳</b><span>Wiederlieben</span><b>✳</b>
-          <span>Stöbern</span><b>✳</b><span>Staunen</span><b>✳</b><span>Wiederlieben</span>
+          <span>
+            <span data-language-content="de">Stöbern</span><span data-language-content="cs" lang="cs" hidden>Prohlížet</span>
+          </span><b>✳</b>
+          <span><span data-language-content="de">Staunen</span><span data-language-content="cs" lang="cs" hidden>Objevovat</span></span><b>✳</b>
+          <span><span data-language-content="de">Wiederlieben</span><span data-language-content="cs" lang="cs" hidden>Znovu milovat</span></span><b>✳</b>
+          <span><span data-language-content="de">Stöbern</span><span data-language-content="cs" lang="cs" hidden>Prohlížet</span></span><b>✳</b>
+          <span><span data-language-content="de">Staunen</span><span data-language-content="cs" lang="cs" hidden>Objevovat</span></span><b>✳</b>
+          <span><span data-language-content="de">Wiederlieben</span><span data-language-content="cs" lang="cs" hidden>Znovu milovat</span></span><b>✳</b>
+          <span><span data-language-content="de">Stöbern</span><span data-language-content="cs" lang="cs" hidden>Prohlížet</span></span><b>✳</b>
+          <span><span data-language-content="de">Staunen</span><span data-language-content="cs" lang="cs" hidden>Objevovat</span></span><b>✳</b>
+          <span><span data-language-content="de">Wiederlieben</span><span data-language-content="cs" lang="cs" hidden>Znovu milovat</span></span>
         </div>
       </div>
 
       <section class="intro" id="idee" aria-labelledby="idee-title">
         <div class="intro-side">
-          <p class="eyebrow">Mehr als nur stöbern</p>
-          <p>Ein guter Fund ist der Anfang einer neuen Geschichte.</p>
+          <p class="eyebrow">
+            <span data-language-content="de">Mehr als nur stöbern</span>
+            <span data-language-content="cs" lang="cs" hidden>Víc než jen prohlížení</span>
+          </p>
+          <p>
+            <span data-language-content="de">Ein guter Fund ist der Anfang einer neuen Geschichte.</span>
+            <span data-language-content="cs" lang="cs" hidden>Každý skvělý nález je začátkem nového příběhu.</span>
+          </p>
         </div>
         <div class="intro-main">
-          <h2 id="idee-title">Ein zweites Zuhause für <em>Lieblingsstücke.</em></h2>
-          <p>Der Trödelpalast ist ein Ort für neugierige Blicke und kleine Entdeckungen. Für Dinge mit Charakter, die darauf warten, wieder Freude zu machen. Komm mit offenen Augen – und lass dich überraschen.</p>
+          <h2 id="idee-title">
+            <span data-language-content="de">Ein zweites Zuhause für <em>Lieblingsstücke.</em></span>
+            <span data-language-content="cs" lang="cs" hidden>Nový domov pro <em>oblíbené kousky.</em></span>
+          </h2>
+          <p>
+            <span data-language-content="de">Der Trödelpalast ist ein Ort für neugierige Blicke und kleine Entdeckungen. Für Dinge mit Charakter, die darauf warten, wieder Freude zu machen. Komm mit offenen Augen – und lass dich überraschen.</span>
+            <span data-language-content="cs" lang="cs" hidden>Trödelpalast je místem pro zvídavé pohledy a malá objevování. Pro věci s charakterem, které čekají, až znovu udělají radost. Přijďte s otevřenýma očima a nechte se překvapit.</span>
+          </p>
         </div>
       </section>
 
       <section class="values" aria-labelledby="values-title">
         <div class="values-inner">
           <div class="values-heading">
-            <h2 id="values-title">Hier zählt, was ein Ding erlebt hat.</h2>
-            <p>Lieber weiterschätzen als wegwerfen. So wird aus einem alten Fund ein neuer Lieblingsplatz.</p>
+            <h2 id="values-title">
+              <span data-language-content="de">Hier zählt, was ein Ding erlebt hat.</span>
+              <span data-language-content="cs" lang="cs" hidden>Záleží na tom, co už věci zažily.</span>
+            </h2>
+            <p>
+              <span data-language-content="de">Lieber weiterschätzen als wegwerfen. So wird aus einem alten Fund ein neuer Lieblingsplatz.</span>
+              <span data-language-content="cs" lang="cs" hidden>Než vyhazovat, raději předávat dál. Tak se z nalezeného kousku stane nový oblíbenec.</span>
+            </p>
           </div>
           <div class="value-grid">
             <article class="value-card">
-              <span class="value-number">01 / entdecken</span>
-              <h3>Mit offenen Augen</h3>
-              <p>Zwischen Vertrautem und Unerwartetem steckt oft genau das Stück, das noch gefehlt hat.</p>
+              <span class="value-number">
+                <span data-language-content="de">01 / entdecken</span>
+                <span data-language-content="cs" lang="cs" hidden>01 / objevovat</span>
+              </span>
+              <h3>
+                <span data-language-content="de">Mit offenen Augen</span>
+                <span data-language-content="cs" lang="cs" hidden>S otevřenýma očima</span>
+              </h3>
+              <p>
+                <span data-language-content="de">Zwischen Vertrautem und Unerwartetem steckt oft genau das Stück, das noch gefehlt hat.</span>
+                <span data-language-content="cs" lang="cs" hidden>Mezi známým a nečekaným se často skrývá přesně to, co vám ještě chybělo.</span>
+              </p>
             </article>
             <article class="value-card">
-              <span class="value-number">02 / weitergeben</span>
-              <h3>Mit gutem Gefühl</h3>
-              <p>Was schon einmal Freude gemacht hat, darf gern noch viele weitere Geschichten erleben.</p>
+              <span class="value-number">
+                <span data-language-content="de">02 / weitergeben</span>
+                <span data-language-content="cs" lang="cs" hidden>02 / předávat dál</span>
+              </span>
+              <h3>
+                <span data-language-content="de">Mit gutem Gefühl</span>
+                <span data-language-content="cs" lang="cs" hidden>S dobrým pocitem</span>
+              </h3>
+              <p>
+                <span data-language-content="de">Was schon einmal Freude gemacht hat, darf gern noch viele weitere Geschichten erleben.</span>
+                <span data-language-content="cs" lang="cs" hidden>Co už jednou dělalo radost, může psát ještě mnoho dalších příběhů.</span>
+              </p>
             </article>
             <article class="value-card">
-              <span class="value-number">03 / wiederlieben</span>
-              <h3>Ganz auf deine Art</h3>
-              <p>Ein Fundstück wird erst dann besonders, wenn es bei dir ein neues Zuhause findet.</p>
+              <span class="value-number">
+                <span data-language-content="de">03 / wiederlieben</span>
+                <span data-language-content="cs" lang="cs" hidden>03 / znovu milovat</span>
+              </span>
+              <h3>
+                <span data-language-content="de">Ganz auf deine Art</span>
+                <span data-language-content="cs" lang="cs" hidden>Zamilujte se znovu</span>
+              </h3>
+              <p>
+                <span data-language-content="de">Ein Fundstück wird erst dann besonders, wenn es bei dir ein neues Zuhause findet.</span>
+                <span data-language-content="cs" lang="cs" hidden>Pokladem se kousek stane teprve tehdy, když u vás najde nový domov.</span>
+              </p>
             </article>
           </div>
         </div>
       </section>
 
       <section class="visit" id="besuch" aria-labelledby="visit-title">
-        <p class="eyebrow">Dein nächster Lieblingsfund</p>
-        <h2 id="visit-title">Komm vorbei.<br>Stöber dich glücklich.</h2>
-        <p>Du möchtest wissen, was es Neues gibt oder deinen Besuch planen? Auf Facebook findest du aktuelle Einblicke und Neuigkeiten aus dem Trödelpalast.</p>
-        <a class="button" href="https://www.facebook.com/profile.php?id=61582380937136" target="_blank" rel="noopener noreferrer">Zum Trödelpalast auf Facebook <span class="arrow" aria-hidden="true">↗</span></a>
+        <p class="eyebrow">
+          <span data-language-content="de">Dein nächster Lieblingsfund</span>
+          <span data-language-content="cs" lang="cs" hidden>Váš další oblíbený nález</span>
+        </p>
+        <h2 id="visit-title">
+          <span data-language-content="de">Komm vorbei.<br>Stöber dich glücklich.</span>
+          <span data-language-content="cs" lang="cs" hidden>Zastavte se.<br>Udělejte si radost.</span>
+        </h2>
+        <p>
+          <span data-language-content="de">Du möchtest wissen, was es Neues gibt oder deinen Besuch planen? Auf Facebook findest du aktuelle Einblicke und Neuigkeiten aus dem Trödelpalast.</span>
+          <span data-language-content="cs" lang="cs" hidden>Chcete vědět, co je nového, nebo si naplánovat návštěvu? Na Facebooku najdete aktuální novinky a pohledy do Trödelpalastu.</span>
+        </p>
+        <a class="button" href="https://www.facebook.com/profile.php?id=61582380937136" target="_blank" rel="noopener noreferrer">
+          <span data-language-content="de">Zum Trödelpalast auf Facebook</span>
+          <span data-language-content="cs" lang="cs" hidden>Trödelpalast na Facebooku</span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
       </section>
     </main>
 
     <footer class="site-footer">
-      <a class="brand" href="#" aria-label="Trödelpalast – zurück nach oben">
+      <a class="brand" href="#" aria-label="Trödelpalast – zurück nach oben" data-de-label="Trödelpalast – zurück nach oben" data-cs-label="Trödelpalast – zpět nahoru">
         <span class="brand-mark" aria-hidden="true">T</span>
         <span class="brand-name">Trödel<span>palast</span></span>
       </a>
-      <span>Schönes mit Geschichte. Und Platz für neue.</span>
+      <span>
+        <span data-language-content="de">Schönes mit Geschichte. Und Platz für neue.</span>
+        <span data-language-content="cs" lang="cs" hidden>Krásné věci s příběhem. A místo pro další.</span>
+      </span>
     </footer>
+    <script>
+      const languageContent = {
+        de: {
+          title: "Trödelpalast – Schönes mit Geschichte",
+          description: "Willkommen im Trödelpalast – ein Ort zum Stöbern, Wiederentdecken und Verlieben in schöne Dinge mit Geschichte.",
+          socialTitle: "Trödelpalast – Schönes mit Geschichte",
+          socialDescription: "Ein zweites Zuhause für Lieblingsstücke. Entdecke den Trödelpalast."
+        },
+        cs: {
+          title: "Trödelpalast – Krása s příběhem",
+          description: "Vítejte v Trödelpalastu – místě, kde můžete objevovat a znovu si zamilovat krásné věci s příběhem.",
+          socialTitle: "Trödelpalast – Krása s příběhem",
+          socialDescription: "Nový domov pro oblíbené kousky. Objevte Trödelpalast."
+        }
+      };
+
+      function setLanguage(language) {
+        const selectedLanguage = language === "cs" ? "cs" : "de";
+        const content = languageContent[selectedLanguage];
+
+        document.documentElement.lang = selectedLanguage;
+        document.querySelectorAll("[data-language-content]").forEach((element) => {
+          element.hidden = element.dataset.languageContent !== selectedLanguage;
+        });
+        document.querySelectorAll(".language-button").forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.language === selectedLanguage));
+        });
+        document.querySelectorAll("[data-de-label][data-cs-label]").forEach((element) => {
+          element.setAttribute("aria-label", element.dataset[`${selectedLanguage}Label`]);
+        });
+        document.querySelectorAll("[data-de-alt][data-cs-alt]").forEach((element) => {
+          element.setAttribute("alt", element.dataset[`${selectedLanguage}Alt`]);
+        });
+        document.title = content.title;
+        document.querySelector('meta[name="description"]').content = content.description;
+        document.querySelector('meta[property="og:title"]').content = content.socialTitle;
+        document.querySelector('meta[property="og:description"]').content = content.socialDescription;
+
+        const url = new URL(window.location.href);
+        if (selectedLanguage === "de") {
+          url.searchParams.delete("lang");
+        } else {
+          url.searchParams.set("lang", selectedLanguage);
+        }
+        window.history.replaceState(null, "", url);
+      }
+
+      document.querySelectorAll(".language-button").forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.dataset.language));
+      });
+
+      setLanguage(new URLSearchParams(window.location.search).get("lang"));
+    </script>
   </body>
 </html>
