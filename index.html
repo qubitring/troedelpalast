@@ -719,8 +719,17 @@
         }
 
         .main-nav .nav-cta {
-          padding: 11px 12px;
-          font-size: .75rem;
+          display: none;
+        }
+
+        .main-nav {
+          gap: 8px;
+        }
+
+        .language-button {
+          min-width: 29px;
+          padding: 6px 3px;
+          font-size: .68rem;
         }
 
         .hero {
@@ -821,30 +830,35 @@
   <body>
     <div class="announcement">
       <span data-language-content="de">Gebraucht. Geliebt. Wiederentdeckt.</span>
+      <span data-language-content="en" lang="en" hidden>Pre-loved. Well-loved. Ready to be rediscovered.</span>
       <span data-language-content="cs" lang="cs" hidden>Použité. Milované. Znovuobjevené.</span>
     </div>
     <header class="site-header">
-      <a class="brand" href="#" aria-label="Trödelpalast – zur Startseite" data-de-label="Trödelpalast – zur Startseite" data-cs-label="Trödelpalast – domů">
+      <a class="brand" href="#" aria-label="Trödelpalast – zur Startseite" data-de-label="Trödelpalast – zur Startseite" data-en-label="Trödelpalast – back to top" data-cs-label="Trödelpalast – domů">
         <span class="brand-mark" aria-hidden="true">T</span>
         <span class="brand-name">Trödel<span>palast</span></span>
       </a>
-      <nav class="main-nav" aria-label="Hauptnavigation" data-de-label="Hauptnavigation" data-cs-label="Hlavní navigace">
+      <nav class="main-nav" aria-label="Hauptnavigation" data-de-label="Hauptnavigation" data-en-label="Main navigation" data-cs-label="Hlavní navigace">
         <a href="#idee">
           <span data-language-content="de">Unsere Idee</span>
+          <span data-language-content="en" lang="en" hidden>Our story</span>
           <span data-language-content="cs" lang="cs" hidden>Náš příběh</span>
         </a>
         <a href="#besuch">
           <span data-language-content="de">Besuch planen</span>
+          <span data-language-content="en" lang="en" hidden>Plan your visit</span>
           <span data-language-content="cs" lang="cs" hidden>Naplánovat návštěvu</span>
         </a>
         <a class="nav-cta" href="https://www.facebook.com/profile.php?id=61582380937136" target="_blank" rel="noopener noreferrer">
           <span data-language-content="de">Auf Facebook</span>
+          <span data-language-content="en" lang="en" hidden>Facebook</span>
           <span data-language-content="cs" lang="cs" hidden>Na Facebooku</span>
           <span aria-hidden="true">↗</span>
         </a>
-        <div class="language-switcher" role="group" aria-label="Sprache auswählen" data-de-label="Sprache auswählen" data-cs-label="Vyberte jazyk">
-          <button class="language-button" type="button" data-language="de" data-de-label="Auf Deutsch anzeigen" data-cs-label="Zobrazit německy" aria-label="Auf Deutsch anzeigen" aria-pressed="true">DE</button>
-          <button class="language-button" type="button" data-language="cs" data-de-label="Auf Tschechisch anzeigen" data-cs-label="Zobrazit česky" aria-label="Auf Tschechisch anzeigen" aria-pressed="false">CS</button>
+        <div class="language-switcher" role="group" aria-label="Sprache auswählen" data-de-label="Sprache auswählen" data-en-label="Choose language" data-cs-label="Vyberte jazyk">
+          <button class="language-button" type="button" data-language="de" data-de-label="Auf Deutsch anzeigen" data-en-label="View in German" data-cs-label="Zobrazit německy" aria-label="Auf Deutsch anzeigen" aria-pressed="true">DE</button>
+          <button class="language-button" type="button" data-language="en" data-de-label="Auf Englisch anzeigen" data-en-label="View in English" data-cs-label="Zobrazit anglicky" aria-label="Auf Englisch anzeigen" aria-pressed="false">EN</button>
+          <button class="language-button" type="button" data-language="cs" data-de-label="Auf Tschechisch anzeigen" data-en-label="View in Czech" data-cs-label="Zobrazit česky" aria-label="Auf Tschechisch anzeigen" aria-pressed="false">CS</button>
         </div>
       </nav>
     </header>
@@ -854,49 +868,58 @@
         <div class="hero-text">
           <p class="eyebrow">
             <span data-language-content="de">Willkommen im Trödelpalast</span>
+            <span data-language-content="en" lang="en" hidden>Welcome to Trödelpalast</span>
             <span data-language-content="cs" lang="cs" hidden>Vítejte v Trödelpalastu</span>
           </p>
           <h1 id="hero-title">
             <span data-language-content="de">Schönes mit <em>Geschichte.</em></span>
+            <span data-language-content="en" lang="en" hidden>Beautiful things with <em>stories.</em></span>
             <span data-language-content="cs" lang="cs" hidden><em>Krása s příběhem.</em></span>
           </h1>
           <p class="hero-copy">
             <span data-language-content="de">Manche Dinge sind einfach zu schön, um in Vergessenheit zu geraten. Hier beginnt ihr nächstes Kapitel – und vielleicht auch eine neue Lieblingsgeschichte.</span>
+            <span data-language-content="en" lang="en" hidden>Some things are simply too lovely to be forgotten. Here, they begin a new chapter—and maybe a new favorite story of your own.</span>
             <span data-language-content="cs" lang="cs" hidden>Některé věci jsou příliš krásné na to, aby upadly v zapomnění. Tady začíná jejich další kapitola – a možná i váš nový oblíbený příběh.</span>
           </p>
           <div class="button-row">
             <a class="button" href="#idee">
               <span data-language-content="de">Tritt ein</span>
+              <span data-language-content="en" lang="en" hidden>Come on in</span>
               <span data-language-content="cs" lang="cs" hidden>Vstupte dál</span>
               <span class="arrow" aria-hidden="true">↓</span>
             </a>
             <a class="button button-secondary" href="https://www.facebook.com/profile.php?id=61582380937136" target="_blank" rel="noopener noreferrer">
               <span data-language-content="de">Aktuelles entdecken</span>
+              <span data-language-content="en" lang="en" hidden>See what's new</span>
               <span data-language-content="cs" lang="cs" hidden>Novinky</span>
               <span class="arrow" aria-hidden="true">↗</span>
             </a>
           </div>
         </div>
 
-        <div class="hero-art" aria-label="Gemütlicher Wohnraum mit ausgewählten Einrichtungsstücken" data-de-label="Gemütlicher Wohnraum mit ausgewählten Einrichtungsstücken" data-cs-label="Útulný obývací pokoj s vybraným nábytkem">
+        <div class="hero-art" aria-label="Gemütlicher Wohnraum mit ausgewählten Einrichtungsstücken" data-de-label="Gemütlicher Wohnraum mit ausgewählten Einrichtungsstücken" data-en-label="A cozy living room with carefully chosen pieces" data-cs-label="Útulný obývací pokoj s vybraným nábytkem">
           <div class="hero-photo">
-            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Warmer, liebevoll eingerichteter Wohnraum mit gemütlichen Möbeln" data-de-alt="Warmer, liebevoll eingerichteter Wohnraum mit gemütlichen Möbeln" data-cs-alt="Světlý a útulný obývací pokoj s nábytkem" fetchpriority="high">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Warmer, liebevoll eingerichteter Wohnraum mit gemütlichen Möbeln" data-de-alt="Warmer, liebevoll eingerichteter Wohnraum mit gemütlichen Möbeln" data-en-alt="A warm, thoughtfully furnished living room" data-cs-alt="Světlý a útulný obývací pokoj s nábytkem" fetchpriority="high">
             <span class="photo-caption">
               <span data-language-content="de">Ein Fundstück wartet schon.</span>
+              <span data-language-content="en" lang="en" hidden>Your next special find is waiting.</span>
               <span data-language-content="cs" lang="cs" hidden>Čeká tu nález, který si zamilujete.</span>
             </span>
           </div>
           <div class="sun-stamp" aria-hidden="true">
             <span>
               <span data-language-content="de">Lieblingsteile</span>
+              <span data-language-content="en" lang="en" hidden>Treasured finds</span>
               <span data-language-content="cs" lang="cs" hidden>Oblíbené kousky</span>
             </span>
             <strong>
               <span data-language-content="de">für immer</span>
+              <span data-language-content="en" lang="en" hidden>for years</span>
               <span data-language-content="cs" lang="cs" hidden>pro další</span>
             </strong>
             <span>
               <span data-language-content="de">weitergeben</span>
+              <span data-language-content="en" lang="en" hidden>to come</span>
               <span data-language-content="cs" lang="cs" hidden>generace</span>
             </span>
           </div>
@@ -904,19 +927,19 @@
         </div>
       </section>
 
-      <div class="ticker" aria-label="Stöbern, staunen, wiederlieben" data-de-label="Stöbern, staunen, wiederlieben" data-cs-label="Prohlížet, objevovat, znovu milovat">
+      <div class="ticker" aria-label="Stöbern, staunen, wiederlieben" data-de-label="Stöbern, staunen, wiederlieben" data-en-label="Browse, discover, love again" data-cs-label="Prohlížet, objevovat, znovu milovat">
         <div class="ticker-track" aria-hidden="true">
           <span>
-            <span data-language-content="de">Stöbern</span><span data-language-content="cs" lang="cs" hidden>Prohlížet</span>
+            <span data-language-content="de">Stöbern</span><span data-language-content="en" lang="en" hidden>Browse</span><span data-language-content="cs" lang="cs" hidden>Prohlížet</span>
           </span><b>✳</b>
-          <span><span data-language-content="de">Staunen</span><span data-language-content="cs" lang="cs" hidden>Objevovat</span></span><b>✳</b>
-          <span><span data-language-content="de">Wiederlieben</span><span data-language-content="cs" lang="cs" hidden>Znovu milovat</span></span><b>✳</b>
-          <span><span data-language-content="de">Stöbern</span><span data-language-content="cs" lang="cs" hidden>Prohlížet</span></span><b>✳</b>
-          <span><span data-language-content="de">Staunen</span><span data-language-content="cs" lang="cs" hidden>Objevovat</span></span><b>✳</b>
-          <span><span data-language-content="de">Wiederlieben</span><span data-language-content="cs" lang="cs" hidden>Znovu milovat</span></span><b>✳</b>
-          <span><span data-language-content="de">Stöbern</span><span data-language-content="cs" lang="cs" hidden>Prohlížet</span></span><b>✳</b>
-          <span><span data-language-content="de">Staunen</span><span data-language-content="cs" lang="cs" hidden>Objevovat</span></span><b>✳</b>
-          <span><span data-language-content="de">Wiederlieben</span><span data-language-content="cs" lang="cs" hidden>Znovu milovat</span></span>
+          <span><span data-language-content="de">Staunen</span><span data-language-content="en" lang="en" hidden>Discover</span><span data-language-content="cs" lang="cs" hidden>Objevovat</span></span><b>✳</b>
+          <span><span data-language-content="de">Wiederlieben</span><span data-language-content="en" lang="en" hidden>Love again</span><span data-language-content="cs" lang="cs" hidden>Znovu milovat</span></span><b>✳</b>
+          <span><span data-language-content="de">Stöbern</span><span data-language-content="en" lang="en" hidden>Browse</span><span data-language-content="cs" lang="cs" hidden>Prohlížet</span></span><b>✳</b>
+          <span><span data-language-content="de">Staunen</span><span data-language-content="en" lang="en" hidden>Discover</span><span data-language-content="cs" lang="cs" hidden>Objevovat</span></span><b>✳</b>
+          <span><span data-language-content="de">Wiederlieben</span><span data-language-content="en" lang="en" hidden>Love again</span><span data-language-content="cs" lang="cs" hidden>Znovu milovat</span></span><b>✳</b>
+          <span><span data-language-content="de">Stöbern</span><span data-language-content="en" lang="en" hidden>Browse</span><span data-language-content="cs" lang="cs" hidden>Prohlížet</span></span><b>✳</b>
+          <span><span data-language-content="de">Staunen</span><span data-language-content="en" lang="en" hidden>Discover</span><span data-language-content="cs" lang="cs" hidden>Objevovat</span></span><b>✳</b>
+          <span><span data-language-content="de">Wiederlieben</span><span data-language-content="en" lang="en" hidden>Love again</span><span data-language-content="cs" lang="cs" hidden>Znovu milovat</span></span>
         </div>
       </div>
 
@@ -924,20 +947,24 @@
         <div class="intro-side">
           <p class="eyebrow">
             <span data-language-content="de">Mehr als nur stöbern</span>
+            <span data-language-content="en" lang="en" hidden>More than browsing</span>
             <span data-language-content="cs" lang="cs" hidden>Víc než jen prohlížení</span>
           </p>
           <p>
             <span data-language-content="de">Ein guter Fund ist der Anfang einer neuen Geschichte.</span>
+            <span data-language-content="en" lang="en" hidden>A great find is the start of a new story.</span>
             <span data-language-content="cs" lang="cs" hidden>Každý skvělý nález je začátkem nového příběhu.</span>
           </p>
         </div>
         <div class="intro-main">
           <h2 id="idee-title">
             <span data-language-content="de">Ein zweites Zuhause für <em>Lieblingsstücke.</em></span>
+            <span data-language-content="en" lang="en" hidden>A new home for <em>beloved finds.</em></span>
             <span data-language-content="cs" lang="cs" hidden>Nový domov pro <em>oblíbené kousky.</em></span>
           </h2>
           <p>
             <span data-language-content="de">Der Trödelpalast ist ein Ort für neugierige Blicke und kleine Entdeckungen. Für Dinge mit Charakter, die darauf warten, wieder Freude zu machen. Komm mit offenen Augen – und lass dich überraschen.</span>
+            <span data-language-content="en" lang="en" hidden>Trödelpalast is a place for curious eyes and little discoveries. For things with character, waiting to bring someone joy again. Come with an open mind—and see what you find.</span>
             <span data-language-content="cs" lang="cs" hidden>Trödelpalast je místem pro zvídavé pohledy a malá objevování. Pro věci s charakterem, které čekají, až znovu udělají radost. Přijďte s otevřenýma očima a nechte se překvapit.</span>
           </p>
         </div>
@@ -948,10 +975,12 @@
           <div class="values-heading">
             <h2 id="values-title">
               <span data-language-content="de">Hier zählt, was ein Ding erlebt hat.</span>
+              <span data-language-content="en" lang="en" hidden>Every piece has a story to tell.</span>
               <span data-language-content="cs" lang="cs" hidden>Záleží na tom, co už věci zažily.</span>
             </h2>
             <p>
               <span data-language-content="de">Lieber weiterschätzen als wegwerfen. So wird aus einem alten Fund ein neuer Lieblingsplatz.</span>
+              <span data-language-content="en" lang="en" hidden>Pass it on rather than throw it away. That's how an old find becomes someone's new favorite.</span>
               <span data-language-content="cs" lang="cs" hidden>Než vyhazovat, raději předávat dál. Tak se z nalezeného kousku stane nový oblíbenec.</span>
             </p>
           </div>
@@ -959,42 +988,51 @@
             <article class="value-card">
               <span class="value-number">
                 <span data-language-content="de">01 / entdecken</span>
+                <span data-language-content="en" lang="en" hidden>01 / discover</span>
                 <span data-language-content="cs" lang="cs" hidden>01 / objevovat</span>
               </span>
               <h3>
                 <span data-language-content="de">Mit offenen Augen</span>
+                <span data-language-content="en" lang="en" hidden>Look a little closer</span>
                 <span data-language-content="cs" lang="cs" hidden>S otevřenýma očima</span>
               </h3>
               <p>
                 <span data-language-content="de">Zwischen Vertrautem und Unerwartetem steckt oft genau das Stück, das noch gefehlt hat.</span>
+                <span data-language-content="en" lang="en" hidden>Somewhere between familiar and unexpected is often exactly the piece you didn't know you were missing.</span>
                 <span data-language-content="cs" lang="cs" hidden>Mezi známým a nečekaným se často skrývá přesně to, co vám ještě chybělo.</span>
               </p>
             </article>
             <article class="value-card">
               <span class="value-number">
                 <span data-language-content="de">02 / weitergeben</span>
+                <span data-language-content="en" lang="en" hidden>02 / pass it on</span>
                 <span data-language-content="cs" lang="cs" hidden>02 / předávat dál</span>
               </span>
               <h3>
                 <span data-language-content="de">Mit gutem Gefühl</span>
+                <span data-language-content="en" lang="en" hidden>Pass it along</span>
                 <span data-language-content="cs" lang="cs" hidden>S dobrým pocitem</span>
               </h3>
               <p>
                 <span data-language-content="de">Was schon einmal Freude gemacht hat, darf gern noch viele weitere Geschichten erleben.</span>
+                <span data-language-content="en" lang="en" hidden>Something that brought joy once deserves the chance to be part of many more stories.</span>
                 <span data-language-content="cs" lang="cs" hidden>Co už jednou dělalo radost, může psát ještě mnoho dalších příběhů.</span>
               </p>
             </article>
             <article class="value-card">
               <span class="value-number">
                 <span data-language-content="de">03 / wiederlieben</span>
+                <span data-language-content="en" lang="en" hidden>03 / love again</span>
                 <span data-language-content="cs" lang="cs" hidden>03 / znovu milovat</span>
               </span>
               <h3>
                 <span data-language-content="de">Ganz auf deine Art</span>
+                <span data-language-content="en" lang="en" hidden>Love it all over again</span>
                 <span data-language-content="cs" lang="cs" hidden>Zamilujte se znovu</span>
               </h3>
               <p>
                 <span data-language-content="de">Ein Fundstück wird erst dann besonders, wenn es bei dir ein neues Zuhause findet.</span>
+                <span data-language-content="en" lang="en" hidden>A find becomes truly special when it finds a new home with you.</span>
                 <span data-language-content="cs" lang="cs" hidden>Pokladem se kousek stane teprve tehdy, když u vás najde nový domov.</span>
               </p>
             </article>
@@ -1005,18 +1043,22 @@
       <section class="visit" id="besuch" aria-labelledby="visit-title">
         <p class="eyebrow">
           <span data-language-content="de">Dein nächster Lieblingsfund</span>
+          <span data-language-content="en" lang="en" hidden>Your next favorite find</span>
           <span data-language-content="cs" lang="cs" hidden>Váš další oblíbený nález</span>
         </p>
         <h2 id="visit-title">
           <span data-language-content="de">Komm vorbei.<br>Stöber dich glücklich.</span>
+          <span data-language-content="en" lang="en" hidden>Come on in.<br>Find something to love.</span>
           <span data-language-content="cs" lang="cs" hidden>Zastavte se.<br>Udělejte si radost.</span>
         </h2>
         <p>
           <span data-language-content="de">Du möchtest wissen, was es Neues gibt oder deinen Besuch planen? Auf Facebook findest du aktuelle Einblicke und Neuigkeiten aus dem Trödelpalast.</span>
+          <span data-language-content="en" lang="en" hidden>Curious about what's new or planning a visit? Follow us on Facebook for the latest glimpses and news from Trödelpalast.</span>
           <span data-language-content="cs" lang="cs" hidden>Chcete vědět, co je nového, nebo si naplánovat návštěvu? Na Facebooku najdete aktuální novinky a pohledy do Trödelpalastu.</span>
         </p>
         <a class="button" href="https://www.facebook.com/profile.php?id=61582380937136" target="_blank" rel="noopener noreferrer">
           <span data-language-content="de">Zum Trödelpalast auf Facebook</span>
+          <span data-language-content="en" lang="en" hidden>Visit Trödelpalast on Facebook</span>
           <span data-language-content="cs" lang="cs" hidden>Trödelpalast na Facebooku</span>
           <span class="arrow" aria-hidden="true">↗</span>
         </a>
@@ -1024,12 +1066,13 @@
     </main>
 
     <footer class="site-footer">
-      <a class="brand" href="#" aria-label="Trödelpalast – zurück nach oben" data-de-label="Trödelpalast – zurück nach oben" data-cs-label="Trödelpalast – zpět nahoru">
+      <a class="brand" href="#" aria-label="Trödelpalast – zurück nach oben" data-de-label="Trödelpalast – zurück nach oben" data-en-label="Trödelpalast – back to top" data-cs-label="Trödelpalast – zpět nahoru">
         <span class="brand-mark" aria-hidden="true">T</span>
         <span class="brand-name">Trödel<span>palast</span></span>
       </a>
       <span>
         <span data-language-content="de">Schönes mit Geschichte. Und Platz für neue.</span>
+        <span data-language-content="en" lang="en" hidden>Beautiful things with stories. Room for a new one.</span>
         <span data-language-content="cs" lang="cs" hidden>Krásné věci s příběhem. A místo pro další.</span>
       </span>
     </footer>
@@ -1046,11 +1089,17 @@
           description: "Vítejte v Trödelpalastu – místě, kde můžete objevovat a znovu si zamilovat krásné věci s příběhem.",
           socialTitle: "Trödelpalast – Krása s příběhem",
           socialDescription: "Nový domov pro oblíbené kousky. Objevte Trödelpalast."
+        },
+        en: {
+          title: "Trödelpalast – Beautiful things with stories",
+          description: "Welcome to Trödelpalast, a place to browse, rediscover, and fall in love with beautiful things that have a story to tell.",
+          socialTitle: "Trödelpalast – Beautiful things with stories",
+          socialDescription: "A new home for beloved finds. Discover Trödelpalast."
         }
       };
 
       function setLanguage(language) {
-        const selectedLanguage = language === "cs" ? "cs" : "de";
+        const selectedLanguage = ["de", "en", "cs"].includes(language) ? language : "de";
         const content = languageContent[selectedLanguage];
 
         document.documentElement.lang = selectedLanguage;
@@ -1060,10 +1109,10 @@
         document.querySelectorAll(".language-button").forEach((button) => {
           button.setAttribute("aria-pressed", String(button.dataset.language === selectedLanguage));
         });
-        document.querySelectorAll("[data-de-label][data-cs-label]").forEach((element) => {
+        document.querySelectorAll("[data-de-label][data-en-label][data-cs-label]").forEach((element) => {
           element.setAttribute("aria-label", element.dataset[`${selectedLanguage}Label`]);
         });
-        document.querySelectorAll("[data-de-alt][data-cs-alt]").forEach((element) => {
+        document.querySelectorAll("[data-de-alt][data-en-alt][data-cs-alt]").forEach((element) => {
           element.setAttribute("alt", element.dataset[`${selectedLanguage}Alt`]);
         });
         document.title = content.title;
